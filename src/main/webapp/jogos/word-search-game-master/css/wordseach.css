@@ -24,5 +24,9 @@
 }
 
 .ws-found {
-  background: yellow;
+  background: #DAA520;
+}
+
+.ws-marked {
+    background-color: #999;
 }

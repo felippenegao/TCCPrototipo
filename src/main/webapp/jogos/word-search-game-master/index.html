@@ -1,33 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>Word search game</title>
-    <link rel="stylesheet" href="css/wordseach.min.css" />
-    <link rel="stylesheet" href="css/style.min.css" />
-  </head>
-  <body>
-    <div class="wrap">
-      <h1 class="logo">Word search game</h1>
-      <section id="ws-area"></section>
-      <ul class="ws-words"></ul>
-    </div>
-    <a href="https://github.com/lizhineng/word-search-game"><img style="position: absolute; top: 0; right: 0; border: 0;" src="images/forkme_right_red.png" alt="Fork me on GitHub"></a>
-    <script src="js/utility.min.js"></script>
-    <script src="js/wordsearch.min.js"></script>
-    <script type="text/javascript">
-      var gameAreaEl = document.getElementById('ws-area');
-      var gameobj = gameAreaEl.wordSeach();
+    <head>
+        <meta charset="utf-8">
+        <title>Caça Palavras</title>
+        <link rel="stylesheet" href="css/wordseach.css" />
+        <link rel="stylesheet" href="css/style.css" />
+    </head>
+    <body>
+        <div class="wrapper">
 
-      // Put words into `.ws-words`
-      var words = gameobj.settings.words,
-        wordsWrap = document.querySelector('.ws-words');
-      for (i in words) {
-        var liEl = document.createElement('li');
-        liEl.setAttribute('class', 'ws-word');
-        liEl.innerText = words[i];
-        wordsWrap.appendChild(liEl);
-      }
-    </script>
-  </body>
+            <div class="header clearfix">
+                <h1 class="header__title">Caça Palavras</h1>
+            </div><!-- /.header -->
+
+            <div class="content">
+                <div class="container">
+                    <!-- Area das Palavras -->
+                    <section id="ws-area"></section>
+                    <!-- Area das Respostas -->
+                    <ul class="ws-words"></ul>
+                    <!-- Area das Respostas -->
+                    <section id="time">
+                        <h1>Tempo de Jogo</h1>
+                        <p>00:01:43</p>
+                    </section>
+                </div>
+            </div>
+            
+            <div class="footer clearfix">
+                <div>Caça Palavras - Passatempos</div>
+            </div><!-- /.footer -->
+            
+        </div>
+        <script src="js/utility.js"></script>
+        <script src="js/wordsearch.js"></script>
+        <script type="text/javascript">
+            
+            var gameAreaEl = document.getElementById('ws-area');
+            var gameobj = gameAreaEl.wordSeach();
+
+            // Put words into `.ws-words`
+            var words = gameobj.settings.words,
+                    wordsWrap = document.querySelector('.ws-words');
+            for (i in words) {
+                var liEl = document.createElement('li');
+                liEl.setAttribute('class', 'ws-word');
+                liEl.setAttribute('id', 'ws-word-' + words[i]);
+                liEl.innerText = words[i];
+                wordsWrap.appendChild(liEl);
+            }
+        </script>
+    </body>
 </html>

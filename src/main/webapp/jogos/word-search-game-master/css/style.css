@@ -1,53 +1,154 @@
 /* CSS reset */
 
-body, h1 {
-  margin: 0;
-  padding: 0;
+@import url(http://fonts.googleapis.com/css?family=Francois+One&subset=latin,latin-ext);
+
+/* =============================================================================
+  RESET, BOX SIZING, & CLEARFIX
+============================================================================= */
+html, body, div, span, h1, h2, h3, h4, h5, h6, p, a, small, img {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
 }
 
-h1 {
-  text-transform: uppercase;
+*,
+*::before,
+*::after {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* =============================================================================
+  BASE
+============================================================================= */
+body,
+html {
+    height: 100%;
 }
 
 body {
-  color: #333;
+    color: #787a80;
+    background-color: #DAA520;
+    font-family: 'Francois One', sans-serif;
+    font-size: 21px;
 }
 
-/* Common */
-
-.fix {
-  *zoom: 1;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 400;
 }
 
-.fix:after {
-  display: table;
-  clear: both;
-  content: '';
+a {
+    text-decoration: none;
 }
 
-/* Home */
-
-.wrap {
-  width: 960px;
-  margin: 0 auto;
-  padding: 40px 0;
-  text-align: center;
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
 }
 
-.logo, #gameArea {
-  margin-bottom: 40px;
+/* =============================================================================
+  LAYOUT
+============================================================================= */
+/* wrapper */
+.wrapper {
+    margin: 0 auto;
+    width: 100%;
+    min-width: 480px;
 }
 
-.ws-area, .ws-words {
-  display: inline-block;
-  vertical-align: top;
+/* container */
+.container {
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* header */
+.header {
+    padding: 25px;
+    text-align: center;
+}
+
+.header__title {
+    color: #fff;
+    font-size: 2em;
+    line-height: 30px;
+}
+
+/* content */
+.content {
+    margin: 0 auto;
+    display: table;
+    padding: 20px;
+    background-color: #fff;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    background-image: url(../img/icons/bald2.svg);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+/* footer */
+.footer {
+    padding: 20px;
+}
+.footer div {
+    width: 100%;
+    text-align: center;
+    color: #fff;
+}
+
+#ws-area, .ws-words, #time {
+    display: inline-block;
+    vertical-align: top;
+    margin: 0;
+    padding: 0;
 }
 
 .ws-words {
-  margin-left: 20px;
-  text-align: left;
+    padding: 10px 0;
+    margin-left: 20px;
+    text-align: center;
+    list-style: none;
+
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    
+    background-color: #eee;
+
 }
 
 .ws-word {
-  margin-bottom: 4px;
+    padding: 5px 20px;
+}
+
+#time {
+    margin-left: 20px;
+    padding: 10px;
+    text-align: center;
+    background-color: #500;
+    color: #fff;
+
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+#time p {
+    font-size: 2em;
 }
